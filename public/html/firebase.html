@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Zach Serre zserre">
+  <title>zserre.io/onTap</title>
+  <link rel="shortcut icon" href="/images/favicon.png">
+  <link href="/bootstrap/3.0.2/css/bootstrap.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="/css/onTap.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div id="onTap" class="container contentPage">
+
+    <div class="onTapBanner" align="center"><img src="/images/onTap.png"></img></div>
+    <hr />
+    <h1>Kegerator Temperature: <span class="altColor">N/A</span></h1>
+
+    <section id="main">     
+      <ul id="brew-list"></ul>
+      <table class="table">
+        <thead>
+          <tr>
+            <th><h3>Tap Handle Number</h3></th>
+            <th><h3>Name</h3></th>
+            <th><h3>Type</h3></th>
+          </tr>
+          <tbody id="brewBody"></tbody>
+        </thead>
+      </table>
+    </section>
+
+    <footer>
+        <hr />
+        <p>© 2013 Zachary T Serre. All Rights Reserved.</p>
+    </footer>
+
+  </div>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/json2/20121008/json2.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.3/underscore-min.js"></script>
+  <script src="//cdn.firebase.com/v0/firebase.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.10/backbone-min.js"></script>
+  <script src="/js/backbone-firebase.js"></script> 
+
+  <!-- Templates -->
+
+   <script type="text/template" id="brew-template">
+    <% if (statusID) { %>
+      <td><h1><span class="altColor"><%- tapNumber %></span></h1></td>
+      <td><h3><span class="altColor"><%- name %></span></h3></td>
+      <td><h3><%- type %></span></h3></td>
+    <% } %>
+  </script>
+
+  <script>
+  var Brews;
+
+  $(function(){
+
+  // Brew Model
+  var Brew = Backbone.Model.extend({
+
+    defaults: function() {
+      return {
+        name: "no beers"
+      };
+    },
+
+    // Ensure that each brew created has `title`.
+    initialize: function() {
+      if (!this.get("name")) {
+        this.set({"name": this.defaults().name});
+      }
+    }
+
+  });
+
+  var BrewList = Backbone.Firebase.Collection.extend({
+    
+    model: Brew,
+
+    firebase: new Firebase("https://zserreio.firebaseio.com/brews")
+
+  });
+
+  Brews = new BrewList;
+
+  // the brew view
+  var BrewView = Backbone.View.extend({
+
+    tagName:  "tr",
+    template: _.template($('#brew-template').html()),
+    events: {},
+    // The BrewView listens for changes to its model, re-rendering. Since there's
+    // a one-to-one correspondence between a **Brew** and a **BrewView** in this
+    // app, we set a direct reference on the model for convenience.
+
+    initialize: function() {
+      this.listenTo(this.model, 'change', this.render);
+      this.listenTo(this.model, 'remove', this.remove);
+    },
+    render: function() {
+      this.$el.addClass("success");
+      this.$el.html(this.template(this.model.toJSON()));          
+      return this;
+    }
+
+  });
+
+  // App  
+  var AppView = Backbone.View.extend({
+
+    el: $("#onTap"),
+   
+    events: {},
+
+    // At initialization we bind to the relevant events on the `Brews`
+    // collection, when items are added or changed. Kick things off by
+    // loading any preexisting brews that might be saved in firebase.
+    initialize: function() {
+      
+      this.listenTo(Brews, 'add', this.addBrew);
+      this.listenTo(Brews, 'reset', this.addBrews)
+      this.listenTo(Brews, 'all', this.render);
+
+      this.footer = this.$('footer');
+      this.main = $('#main');
+    },
+
+    render: function() {},
+ 
+    addBrew: function(brew) {
+      var view = new BrewView({model: brew});
+      this.$("brewBo#dy").append(view.render().el);
+    },
+
+    addBrews: function() {
+      this.$("#brewBody").html("");
+      Brews.each(this.addOne, this);
+    }
+
+  });
+
+  var App = new AppView;
+
+});
+
+  </script>
+  </body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="personal website for Zach Serre">
+    <meta name="author" content="Zach Serre">
+    <link rel="shortcut icon" href="/images/favicon.png">
+
+    <title>zserre.io</title>
+
+    <title>Starter Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/bootstrap/3.0.2/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/site.css" rel="stylesheet">
+    <link href="/css/datepicker.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="./bootstrap/3.0.2/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-default">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="/images/zserreio_alt.png" href="/"></img></a>
+        </div>
+        <div id="btnNavBar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li id="navHome" class="active"><a href="#"><i class="fa fa-home fa-fw"></i>Home</a></li>
+            <li id="navCode"><a href="#/code"><i class="fa fa-code fa-fw"></i>Code</a></li>
+            <li id="navBrew"><a href="#/homebrewing"><i class="fa fa-beer fa-fw"></i>Homebrew</a></li>
+            <li id="navAbout"><a href="#/about"><i class="fa fa-info fa-fw"></i>About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container contentPage">
+      <div class="page"></div>
+      <div class="footer">
+        <div align="center">
+          <a title="Github" href="https://github.com/zserre"><i class="fa fa-github-square fa-3x"></i></a>&nbsp;&nbsp;
+          <a title="Facebook" href="https://www.facebook.com/zach.serre"><i class="fa fa-facebook-square fa-3x"></i></a>&nbsp;&nbsp;
+          <a title="Twitter" href="https://twitter.com/zserre"><i class="fa fa-twitter-square fa-3x"></i></a>&nbsp;&nbsp;
+        </div>
+        <hr />
+        <p>© 2013 Zachary T Serre. All Rights Reserved.</p>
+   		</div>
+
+   		<script type="text/template" id="home-template">
+			<div class="pageBody">
+				<div class="tiny-vertical-spacer"></div>
+				<div align="center">
+					<img class="homeBanner img-responsive" src="/images/home_moss.png"></img>
+				</div>
+				<h3>Home</h3>
+				<hr />
+			
+		  	
+		  		<div>
+					<p>Hi there,</p>
+					<p>This is the personal site for <a href="http://zserre.io/#/about"><u>Zach Serre</u></a>.  This site serves as a sandbox for me to experiment with new ideas and technologies so it will be changing often and for no good reason.  
+					</p> 
+					<p></p>
+					<p>The current iteration of this site is built from the ground up using node.js on the server side. The client uses underscore.js, backbone.js and jQuery to provide a m-v-c structure. The styling is done using bootstrap. All data is static currently but plan to migrate to mongoDB or some such in the near future.
+					</p>
+
+					<p>Thanks for visiting and have an A1 day.</p>
+					<div class="small-vertical-spacer"></div>
+		  		</div>
+		  		<div  class="small-vertical-spacer"></div>
+			</div>
+		</script>
+
+		<script type="text/template" id="code-template">
+			<div class="pageBody">
+				<h3>Code</h3>
+		  		<hr />
+		  		<div class="table-responsive">
+		  		<table class="table table-hover"> 
+			  		 <thead>
+			          <tr>
+			            <th></th>
+			            <th>Name</th>
+			            <th>Description</th>
+			            <th>GitHub</th>
+			          </tr>
+			        </thead>
+			        <tbody>
+		  			<tr>
+		  				<td><div align="center"><a href="http://twittermapp.herokuapp.com"> <img src="/images/twittermappButton.png"></img></a></div></td>
+		  				<td>twittermapp</td>
+		  				<td><b>[Web]</b>  Simple node.js app that autheticates twitter user and allows a user to search twitter and show their tweets on a map.</td>
+		  				<td><a title="Github" href="https://github.com/zserre/twittermapp"><i class="fa fa-github-square fa-3x"></i></a></td>
+		  			</tr>
+		  			<tr>
+		  				<td><div align="center"><a href="https://play.google.com/store/apps/details?id=net.excelltech.android.fancyfingers"> <img src="/images/fancyFingers.png"></img></a></div></td>
+		  				<td>Fancy Fingers</td>
+		  				<td><b>[Android]</b>  Fancy Fingers is a game of digital dexterity pitting you against another opponent over bluetooth to see who can snatch the most squares on a game grid before time runs out. Voted #1 app at Excelltech&#39;s 2012 conference.</td>
+		  				<td></td>
+		  			</tr>
+		  			<tr>
+		  				<td><div align="center"><a href="http://zserre.io/onTap"> <img src="/images/onTap.png"></img></a></div></td>
+		  				<td>zserre.io/onTap</td>
+		  				<td><b>[Web]</b> Displays whats on tap in my basement kegerator at any given moment in a large mobile friendly format.</td>
+		  				<td></td>
+		  			</tr>
+		  			<tr>
+		  				<td><div align="center"><a href="http://zserre.io/onTap"> <img src="/images/onTap.png"></img></a><img src="/images/plus.png"><a href="http://raspberrypi.org/"> <img src="/images/raspPi.png"></img></a></div></td>
+		  				<td>zserre.io/onTap plus Raspberry Pi</td>
+		  				<td><b>[Web + Raspberry Pi]</b> HTTP client on the Raspberry Pi displays the results from zserre.io/onTap to a monitor sitting next to my kegerator to show guests what&#39;s on tap.</td>
+		  				<td></td>
+		  			</tr>
+		  			</tbody>
+		  		</table>
+		  		</div>
+		  		<div  class="small-vertical-spacer"></div>
+		  		<div  class="small-vertical-spacer"></div>
+			</div>
+		</script>
+
+	  	<script type="text/template" id="brew-list-template">
+		  	<h3>Homebrew Journal</h3>
+		  	<hr />
+		  	<a href="#/newBrew" class="btn btn-primary pull-right">New Brew</a>
+			<div  class="small-vertical-spacer"></div>
+			<div  class="small-vertical-spacer"></div>
+			<% if (brews.length > 0) { %>
+			<div class="table-responsive">
+			    <table class="table">
+			        <thead>
+			          <tr>
+			            <th>Name</th>
+			            <th>Style</th>
+			            <th>Brew Date</th>
+			            <th>Status</th>
+			            <th></th>
+			          </tr>
+			        </thead>
+			        <tbody>
+			          <% _.each(brews, function(brew){ %>
+			            <%  var iStatus = ''; %>
+			            <%  var iStatusID = parseFloat(brew.get('statusID')); %>
+
+			        <% if (iStatusID == 0) {  %>
+			            <tr class="success">
+			            <% iStatus = "on tap" %>
+			        <% }else if(iStatusID == 1){ %>
+			          <tr class="warning">
+			          <% iStatus = "fermenting" %>
+			        <% }else if(iStatusID == 2){ %>
+			          <tr class="active">
+			          <% iStatus = "drank :(" %>
+			        <% }else{ %>
+			          <tr class="active">
+			        <% }%>              
+			          <td><%= htmlEncode(brew.get('name'))%></td>
+			          <td><%= htmlEncode(brew.get('type')) %></td>
+			          <td><%= htmlEncode(brew.get('brewDate')) %></td>
+			          <td><%= iStatus %></td>
+			          <td><a href="#/edit/<%= htmlEncode(brew.get('_id').valueOf()) %>" class="btn btn-primary btn-xs">Edit</a></td>
+			        </tr>
+			          <% }); %>
+			        </tbody>
+			    </table>
+			</div>
+			<% }else { %>
+				<div align="center" class="text-muted"><h3>Journal is empty</h3></div>
+				<div  class="small-vertical-spacer"></div>
+				<div  class="small-vertical-spacer"></div>
+				<div  class="small-vertical-spacer"></div>
+				<div  class="small-vertical-spacer"></div>
+			<% } %>
+			<div  class="small-vertical-spacer"></div>
+		</script>
+
+		<script type="text/template" id="edit-brew-template">
+			<div class="small-vertical-spacer"></div>
+		 	<form class="form-horizontal edit-brew-form" role="form" >
+		 		<legend><%= brew ? 'Update' : 'Create' %> Brew</legend>
+				<div class="form-group">
+					<label for="brewName" class="col-sm-4 control-label">Name</label>
+					<div class="col-sm-5">
+						<input name="name" type="text" class="form-control" id="brewName" placeholder="ex. Bell's Two Hearted Clone" value="<%= brew ? brew.get('name') : '' %>">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="brewStyle" class="col-sm-4 control-label">Style</label>
+					<div class="col-sm-5">
+						<input name="type" type="text" class="form-control" id="brewStyle" placeholder="ex. Ale / Lager" value="<%= brew ? brew.get('type') : '' %>">
+					</div>
+				</div>
+				<div class="form-group">
+					<label  for="brewDate" class="col-sm-4 control-label">Date</label>
+					<div class="col-sm-5">
+						<input id="dpBrew" name="brewDate" type="text" class="form-control" data-date-format="mm/dd/yyyy" id="brewDate" value="<%= brew ? brew.get('brewDate') : todayString() %>">
+					</div>
+				</div>
+				<div class="form-group">
+					<input id="hiddenBrewStatusName" name="statusName" type="hidden" value="<%= brew ? brew.get('statusName') : 'None' %>"></input>
+					<input id="hiddenBrewStatus" name="statusID" type="hidden" value="<%= brew ? brew.get('statusID') : 1000 %>"></input>
+					<label for="brewStatus" class="col-sm-4 control-label">Status</label>
+					<div class="col-sm-5">
+						<div  class="btn-group">
+						  	<button id="brewStatus" class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+						    <%= brew ? brew.get('statusName') + ' ' : 'None ' %><span class="caret"></span>
+						  	</button>
+						  	<ul id="brewStatusList" class="dropdown-menu" role="menu">
+						 		<li value="1000"><a>None</a></li>
+						 		<li value="0"><a>On Tap</a></li>
+								<li value="1"><a>Fermenting</a></li>
+								<li value="2"><a >Drank</a></li>
+						  	</ul>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<input id="hiddenTapNumber" name="tapNumber" type="hidden" value="0"></input>
+					<label for="tapNumber" class="col-sm-4 control-label">Tap Handle #</label>
+					<div class="col-sm-5">
+						<div  class="btn-group">
+						  	<button id="tapNumber" class="btn btn-default dropdown-toggle 
+								<% if (brew) { %>
+							  		<% if ( parseInt(brew.get('statusID')) != 0 ) {%>
+							  			<%=	'disabled' %><% } %>
+							  	<% }else{ %>
+							  		<%=	'disabled' %> 
+							  	<% } %>" 
+						  	type="button" data-toggle="dropdown">
+							  	<% if (brew) { %>
+							  		<% if ( parseInt(brew.get('tapNumber')) > 0) { %>
+							  			<%= brew.get('tapNumber').toString() + ' ' %>	
+							  		<% }else{ %>
+							  			<%=	'None ' %> 
+							  		<% } %>
+							  	<% }else{ %>
+							  		<%=	'None ' %> 
+							  	<% } %>
+							    <span class="caret"></span>
+						  	</button>
+						  	<ul id="tapNumberList" class="dropdown-menu" role="menu">
+						 		<li value="0"><a>None</a></li>
+						 		<li value="1"><a>1</a></li>
+								<li value="2"><a>2</a></li>
+								<li value="3"><a>3</a></li>
+								<li value="4"><a>4</a></li>
+						  	</ul>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="brewUsername" class="col-sm-4 control-label">Username</label>
+					<div class="col-sm-5">
+						<input name="username" type="text" class="form-control" id="brewUsername">
+					</div>
+				</div>
+				<hr />
+				<div class="form-group">
+					<div class="col-sm-offset-4 col-sm-5">
+						<button type="submit" class="btn btn-primary"><%= brew ? 'Save' : 'Create' %></button>
+						<% if(brew) {%>
+							<input name="id" type="hidden" value="<%= brew.get('_id').valueOf() %>"></input>
+							<input name="_id" type="hidden" value="<%= brew.get('_id').valueOf() %>"></input>
+							<button type="button" class="btn btn-danger delete">Delete</button>
+						<% }; %>
+					</div>
+				</div>
+			</form>
+			<div  class="small-vertical-spacer"></div>
+		</script>
+
+		<script type="text/template" id="about-template">
+			<div class="pageBody">
+				<h3>About</h3>
+		  		<hr />
+		  		<div align="center"><img src="/images/profile.png"></img></div>
+		  		<td><div class="small-vertical-spacer"></div></td>
+		  		<div>
+		  			<p>My name is Zach Serre.  I am a software developer living in Minneapolis, MN.</p>
+					<p>Lately I have been focusing on developing apps for the web. Specifically, connecting sensors to the web and making really cool apps around the <a href="http://en.wikipedia.org/wiki/Machine_to_machine"><u>m2m</u></a> / <a href="http://en.wikipedia.org/wiki/Internet_of_Things"><u>internet of things</u></a> framework.</p>
+					<p>In my spare time I work on various embedded platforms, Android apps and dabble in iOS development.</p>
+					<p>I am excited about web and mobile apps, APIs, open specs and providing kick-ass user experience.</p>
+					<p>When I am not coding I love spending time with my wife and dog (<a href="http://i.imgur.com/HtgigjV.jpg"><u>Josie</u></a>). I enjoy homebrewing, biking, hiking, playing hockey, spending time at the cabin and pretty much just enjoying life with my family and friends.</p>
+		  		</div>
+		  		<div  class="small-vertical-spacer"></div>
+			</div>
+		  
+		</script>
+
+    </div><!-- /.container -->
+
+  	<script src="//cdnjs.cloudflare.com/ajax/libs/json2/20121008/json2.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.2/underscore-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.2/backbone-min.js"></script>
+    <script src="/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap-datepicker.js"></script>
+    <script src="/js/utilities.js"></script> 
+    <script src="/js/client.js"></script> 
+    <script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-45913407-1', 'zserre.io');
+	  ga('send', 'pageview');
+
+	</script>
+  </body>
+</html>
